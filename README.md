@@ -1,7 +1,5 @@
 # DataAnalytics-Assessment
 This repository contains the SQL solutions to Cowrywise Data Analyst Assessment.
-
-## Overview
 It shows my ability to write SQL queries to solve business problems using the provided database. The solutions demonstrate proficiency in data retrieval, aggregation, joins, and data manipulation across the `users_customuser`, `savings_savingsaccount`, `plans_plan`, and `withdrawals_withdrawal` tables.
 
 ## Per-Question Explanations
