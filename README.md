@@ -26,7 +26,7 @@ This assessment clearly shows the ability to write SQL queries to solve business
 
 ### Question 2: Transaction Frequency Analysis
 
-**Objective:** Calculate the average number of transactions per customer per month and categorize them into "High Frequency" (≥10 transactions/month), "Medium Frequency" (3-9 transactions/month), and "Low Frequency" (≤2 transactions/month).
+**Objective:** Calculate the average number of transactions per customer per month and categorise them into "High Frequency" (≥10 transactions/month), "Medium Frequency" (3-9 transactions/month), and "Low Frequency" (≤2 transactions/month).
 
 **SQL File:** `Assessment_Q2.sql`
 
@@ -85,7 +85,7 @@ This assessment clearly shows the ability to write SQL queries to solve business
 
 * The primary challenge was to accurately show the relationships between tables and the specific data manipulations required.
 * For Question 1, ensuring the accurate counting of distinct savings and investment plans using `COUNT(DISTINCT CASE WHEN ...)` was crucial to avoid potential overcounting.
-* For Question 2, the correct use of CTEs to break down the query into logical steps was essential for readability and maintainability.
+* For Question 2, the correct use of CTEs to break down the query into logical steps was essential for readability.
 * For Question 3, formatting the `last_transaction_date` using the `DATE()` function to match the expected output format (without the timestamp) was a specific requirement.
 * For Question 4, accurately applying the CLV formula and correctly interpreting the units of the `confirmed_amount` (kobo) were important.
 
