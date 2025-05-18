@@ -90,4 +90,4 @@ This assessment clearly shows the ability to write SQL queries to solve business
 * For Question 4, accurately applying the CLV formula and correctly interpreting the units of the `confirmed_amount` (kobo) were important.
 
 
-**Note:** The SQL files are named according to the format `Assessment_Q[QuestionNumber].sql` as suggested by the expected output file names.
+**Note:** The SQL files are named according to the format `Assessment_Q[QuestionNumber].sql` as instructed.
