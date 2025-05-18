@@ -10,8 +10,6 @@ It shows my ability to write SQL queries to solve business problems using the pr
 
 **Objective:** Identify customers with at least one funded savings plan and one funded investment plan, and sort by total deposits.
 
-**SQL File:** `Assessment_Q1.sql`
-
 **Tables Used:** `users_customuser`, `savings_savingsaccount`, and `plans_plan`
 
 **Approach:**
@@ -28,8 +26,6 @@ It shows my ability to write SQL queries to solve business problems using the pr
 
 **Objective:** Calculate the average number of transactions per customer per month and categorise them into "High Frequency" (≥10 transactions/month), "Medium Frequency" (3-9 transactions/month), and "Low Frequency" (≤2 transactions/month).
 
-**SQL File:** `Assessment_Q2.sql`
-
 **Tables Used:** `users_customuser` and `savings_savingsaccount`
 
 **Approach:**
@@ -44,8 +40,6 @@ It shows my ability to write SQL queries to solve business problems using the pr
 ### Question 3: Account Inactivity Alert
 
 **Objective:** Find all active accounts (savings or investments) with no transactions in the last one year (365 days).
-
-**SQL File:** `Assessment_Q3.sql`
 
 **Tables Used:** `plans_plan` and `savings_savingsaccount`
 
@@ -62,8 +56,6 @@ It shows my ability to write SQL queries to solve business problems using the pr
 ### Question 4: Customer Lifetime Value (CLV) Estimation
 
 **Objective:** For each customer, calculate account tenure (months since signup), total transactions, and estimated CLV (assuming profit per transaction is 0.1% of the transaction value). Ordered by estimated CLV from highest to lowest.
-
-**SQL File:** `Assessment_Q4.sql`
 
 **Tables Used:** `users_customuser` and `savings_savingsaccount`
 
@@ -88,6 +80,3 @@ It shows my ability to write SQL queries to solve business problems using the pr
 * For Question 2 - The correct use of CTEs to break down the query into logical steps was essential for better readability.
 * For Question 3 - Formatting the `last_transaction_date` using the `DATE()` function to match the expected output format (without the timestamp) was a specific requirement.
 * For Question 4 - Accurately applying the CLV formula and correctly interpreting the units of the `confirmed_amount` (kobo) were important.
-
-
-**Note:** The SQL files are named according to the format `Assessment_Q[QuestionNumber].sql` as instructed.
