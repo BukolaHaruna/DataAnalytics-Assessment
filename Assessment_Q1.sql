@@ -8,7 +8,7 @@ SELECT
     COUNT(DISTINCT CASE WHEN p.is_regular_savings = 1 THEN p.id ELSE NULL END) AS savings_count,
     COUNT(DISTINCT CASE WHEN p.is_a_fund = 1 THEN p.id ELSE NULL END) AS investment_count,
     
-# 100kobo = 1naira, to convert the amounts in kobo to naira, we divide the amounts by 100 and round to 2 decimal places.
+# 100kobo = 1naira. Divide the amounts by 100 and round to 2 decimal places to convert to naira.
     ROUND((SUM(s.confirmed_amount) / 100), 2) AS total_deposits 
 FROM
     users_customuser as u      
