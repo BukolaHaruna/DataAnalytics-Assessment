@@ -6,11 +6,11 @@ SELECT
     CONCAT(u.first_name, ' ', u.last_name) AS name,
     TIMESTAMPDIFF(MONTH, u.date_joined, CURDATE()) AS tenure_months,
     COUNT(s.id) AS total_transactions,
-# I multiplied the average confirmed amount by 0.1% and rounded the estimated CLV to 2 decimal places.
+# Multiplied the average confirmed amount by 0.1% and rounded the estimated CLV to 2 decimal places.
     ROUND((COUNT(s.id) / TIMESTAMPDIFF(MONTH, u.date_joined, CURDATE())) * 12 * (0.001 * AVG(s.confirmed_amount)), 2) AS estimated_clv
 FROM
     users_customuser AS u
-# Made use of Join to combine the savings_savingsaccount table on the owner_ID.
+# I made use of Join to combine the savings_savingsaccount table on the owner_ID.
 JOIN
     savings_savingsaccount s ON u.id = s.owner_id
 GROUP BY
