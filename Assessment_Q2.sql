@@ -1,6 +1,6 @@
 # Assessment_Q2.sql
     
-# CTE (Common Table Expression) to calculate the number of transactions per customer for each month.
+# CTE to calculate the number of transactions per customer for each month.
 WITH MonthlyTransactions AS (
     SELECT
         s.owner_id,
@@ -12,7 +12,7 @@ WITH MonthlyTransactions AS (
         s.owner_id,
         DATE_FORMAT(s.transaction_date, '%Y-%m')
 ),
-# CTE to calculate the average number of transactions per month for each customer.
+# Calculate the average number of transactions per month for each customer.
 AvgTransactions AS (
     SELECT
         owner_id,
