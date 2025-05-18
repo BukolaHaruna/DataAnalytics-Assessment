@@ -17,12 +17,12 @@ This assessment clearly shows the ability to write SQL queries to solve business
 **Approach:**
 
 1.  **Joined tables:** Joined `users_customuser` (aliased as `u`) with `savings_savingsaccount` (aliased as `s`) on `u.id = s.owner_id` (as `owner_id` is a foreign key to `users_customuser.id`). Joined `savings_savingsaccount` with `plans_plan` (aliased as `p`) on `s.plan_id = p.id` (as `plan_id` is a foreign key to `plans_plan.id`) to combine customer information with their account and plan details. This allows us to access data from all three tables in a single query.
-2.  **Filtered funded transactions:** Filtered for transactions where `s.confirmed_amount > 0` to include only deposits (inflows).
+2.  **Filtered funded transactions:** Filtered for transactions using where `s.confirmed_amount > 0` (as `confirmed_amount` represents the value of inflow) to include only deposits.
 3.  **Counted distinct plan types:** Used `COUNT(DISTINCT CASE WHEN p.is_regular_savings = 1 THEN p.id ELSE NULL END)` to count distinct savings plans and `COUNT(DISTINCT CASE WHEN p.is_a_fund = 1 THEN p.id ELSE NULL END)` to count distinct investment plans. `COUNT(DISTINCT)` ensures each plan is counted only once, even if a customer has multiple transactions within the same plan. The `CASE WHEN` statements conditionally count plans based on their type.
-4.  **Grouped by customer:** Grouped the results by `u.id` and `u.name` to aggregate data and calculate totals for each customer.
+4.  **Grouped by customer:** Grouped the results by `u.id` and `CONCAT(u.first_name, ' ', u.last_name)` as `u.name` to aggregate data and calculate totals for each customer.
 5.  **Filtered for customers with both plan types:** Applied a `HAVING` clause with the same `COUNT(DISTINCT CASE WHEN ...)` conditions as in step 3, but using `>= 1`. This ensures that only customers who have at least one savings plan AND at least one investment plan are included in the result.
-6.  **Calculated total deposits:** Calculated `total_deposits` by `SUM(s.confirmed_amount) / 100.00` to convert from kobo to Naira (as all amount fields are in kobo). The result was then rounded to two decimal places for proper formatting.
-7.  **Ordered by deposits:** Ordered the final result by `total_deposits DESC` to display the highest depositing customers first.
+6.  **Calculated total deposits:** Calculated `total_deposits` by `SUM(s.confirmed_amount) / 100.00` to convert from Kobo to Naira (as all amount fields are in kobo). The result was then rounded to two decimal places for proper formatting.
+7.  **Ordered by deposits:** Ordered the final result by `total_deposits DESC` to display the depositing customers in descending order.
 
 ### Question 2: Transaction Frequency Analysis
 
