@@ -11,8 +11,7 @@ WITH MonthlyTransactions AS (
         savings_savingsaccount AS s
     GROUP BY
         s.owner_id,
-        DATE_FORMAT(s.transaction_date, '%Y-%m')
-),
+        DATE_FORMAT(s.transaction_date, '%Y-%m')),
     
 # Calculate the average number of transactions per month for each customer.
 AvgTransactions AS (
@@ -22,8 +21,7 @@ AvgTransactions AS (
     FROM
         MonthlyTransactions
     GROUP BY
-        owner_id
-)
+        owner_id)
     
 # Main query to categorise customers based on their average monthly transaction frequency.
 SELECT
