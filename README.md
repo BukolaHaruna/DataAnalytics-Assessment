@@ -84,10 +84,10 @@ This assessment clearly shows the ability to write SQL queries to solve business
 ## Challenges
 
 * The primary challenge was to accurately show the relationships between tables and the specific data manipulations required.
-* For Question 1, ensuring the accurate counting of distinct savings and investment plans using `COUNT(DISTINCT CASE WHEN ...)` was crucial to avoid potential overcounting.
-* For Question 2, the correct use of CTEs to break down the query into logical steps was essential for better readability.
-* For Question 3, formatting the `last_transaction_date` using the `DATE()` function to match the expected output format (without the timestamp) was a specific requirement.
-* For Question 4, accurately applying the CLV formula and correctly interpreting the units of the `confirmed_amount` (kobo) were important.
+* For Question 1 - Ensuring the accurate counting of distinct savings and investment plans using `COUNT(DISTINCT CASE WHEN ...)` was crucial to avoid potential overcounting.
+* For Question 2 - The correct use of CTEs to break down the query into logical steps was essential for better readability.
+* For Question 3 - Formatting the `last_transaction_date` using the `DATE()` function to match the expected output format (without the timestamp) was a specific requirement.
+* For Question 4 - Accurately applying the CLV formula and correctly interpreting the units of the `confirmed_amount` (kobo) were important.
 
 
 **Note:** The SQL files are named according to the format `Assessment_Q[QuestionNumber].sql` as instructed.
