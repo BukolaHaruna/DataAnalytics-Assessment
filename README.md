@@ -10,7 +10,7 @@ This assessment clearly shows the ability to write SQL queries to solve business
 
 ### Question 1: High-Value Customers with Multiple Products
 
-**Objective:** Identify customers with at least one funded savings plan and one funded investment plan, and list them in order of total deposits (highest first).
+**Objective:** Identify customers with at least one funded savings plan and one funded investment plan, and sort by total deposits.
 
 **SQL File:** `Assessment_Q1.sql`
 
