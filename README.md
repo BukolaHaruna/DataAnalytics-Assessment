@@ -57,10 +57,6 @@ It shows my ability to write SQL queries to solve business problems using the pr
 2.  **Calculated tenure:** Calculated `tenure_months` using `TIMESTAMPDIFF(MONTH, u.date_joined, CURDATE())` to find the difference in months between the day the customers joined and the current date.
 3.  **Counted transactions:** Counted the `total_transactions` for each customer using `COUNT(s.id)`.
 4.  **Calculated CLV:** Calculated the `estimated_clv` using the provided formula: `(COUNT(s.id) / TIMESTAMPDIFF(MONTH, u.date_joined, CURDATE())) * 12 * (0.001 * AVG(s.confirmed_amount))`.
-    * `COUNT(s.id) / TIMESTAMPDIFF(MONTH, u.date_joined, CURDATE())` stands for the average number of transactions per month.
-    * Multiplied by `12` to show the transactions annually.
-    * `0.001` represents the 0.1% profit per transaction.
-    * `AVG(s.confirmed_amount)` calculates the average transaction value.
 5.  **Rounded CLV:** Rounded the `estimated_clv` to two decimal places using `ROUND()` to match the expected output format.
 6.  **Grouped by customer:** Grouped the results by `u.id`, `u.first_name`, `u.last_name`, and `u.date_joined` to calculate the CLV for each individual customer.
 7.  **Ordered by CLV:** Ordered the results by `estimated_clv` in descending order to display the customers with the highest CLV first.
