@@ -12,6 +12,7 @@ WITH MonthlyTransactions AS (
         s.owner_id,
         DATE_FORMAT(s.transaction_date, '%Y-%m')
 ),
+    
 # Calculate the average number of transactions per month for each customer.
 AvgTransactions AS (
     SELECT
@@ -22,6 +23,7 @@ AvgTransactions AS (
     GROUP BY
         owner_id
 )
+    
 # Main query to categorise customers based on their average monthly transaction frequency.
 SELECT
     CASE
@@ -30,6 +32,7 @@ SELECT
         ELSE 'Low Frequency'
     END AS frequency_category,
     COUNT(*) AS customer_count,
+    
 # Using the ROUND function to round the avg_transactions_per_category to 1 decimal place to match the expected output.
     ROUND(AVG(at.avg_transactions_per_month), 1) AS avg_transactions_per_category
 FROM
