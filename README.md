@@ -75,7 +75,7 @@ It shows my ability to write SQL queries to solve business problems using the pr
 
 ## Challenges
 
-* The primary challenge was to accurately show the relationships between tables and the specific data manipulations required.
+* My major challenge was to accurately show the relationships between tables and the specific data manipulations required.
 * For Question 1 - Ensuring the accurate counting of distinct savings and investment plans using `COUNT(DISTINCT CASE WHEN ...)` was crucial to avoid potential overcounting.
 * For Question 2 - The correct use of CTEs to break down the query into logical steps was essential for better readability.
 * For Question 3 - Formatting the `last_transaction_date` using the `DATE()` function to match the expected output format (without the timestamp) was a specific requirement.
