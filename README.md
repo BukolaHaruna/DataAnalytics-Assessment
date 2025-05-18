@@ -36,14 +36,14 @@ This assessment clearly shows the ability to write SQL queries to solve business
 
 1.  **Created MonthlyTransactions CTE:** Created a Common Table Expression (CTE) named `MonthlyTransactions` to determine the number of transactions per customer for each month. This was achieved by grouping `savings_savingsaccount` (s) by `s.owner_id` and `DATE_FORMAT(s.transaction_date, '%Y-%m')` and using `COUNT(*)` to get the total `monthly_transactions` for each customer-month combination.
 2.  **Created AvgTransactions CTE:** Created another CTE named `AvgTransactions` to calculate the average number of monthly transactions per customer. This CTE used the results from `MonthlyTransactions`, grouped by `owner_id`, and calculated the average of `monthly_transactions` using `AVG()`.
-3.  **Categorised customers:** In the final `SELECT` statement, used a `CASE` statement to categorize customers into "High Frequency," "Medium Frequency," and "Low Frequency" based on their `avg_transactions_per_month`. The conditions were: `>= 10` for "High," between `3` and `9` for "Medium," and `<= 2` for "Low."
+3.  **Categorised customers:** In the final `SELECT` statement, used a `CASE` statement to categorise customers into "High Frequency," "Medium Frequency," and "Low Frequency" based on their `avg_transactions_per_month`. The conditions were: `>= 10` for "High," between `3` and `9` for "Medium," and `<= 2` for "Low."
 4.  **Counted customers per category:** Counted the number of customers in each frequency category using `COUNT(*)`.
 5.  **Calculated average transactions per category:** Calculated the average `avg_transactions_per_month` for each frequency category using `AVG()` and rounded the result to one decimal place using `ROUND()` to match the expected output format.
 6.  **Grouped by category:** Grouped the results by `frequency_category` to get the final aggregated output.
 
 ### Question 3: Account Inactivity Alert
 
-**Objective:** Find all active accounts (savings or investments) with no inflow transactions for over one year (365 days).
+**Objective:** Find all active accounts (savings or investments) with no transactions in the last one year (365 days).
 
 **SQL File:** `Assessment_Q3.sql`
 
@@ -61,7 +61,7 @@ This assessment clearly shows the ability to write SQL queries to solve business
 
 ### Question 4: Customer Lifetime Value (CLV) Estimation
 
-**Objective:** For each customer, calculate account tenure (months since signup), total transactions, and estimated CLV (assuming profit per transaction is 0.1% of the transaction value). Order by estimated CLV from highest to lowest.
+**Objective:** For each customer, calculate account tenure (months since signup), total transactions, and estimated CLV (assuming profit per transaction is 0.1% of the transaction value). Ordered by estimated CLV from highest to lowest.
 
 **SQL File:** `Assessment_Q4.sql`
 
@@ -74,9 +74,9 @@ This assessment clearly shows the ability to write SQL queries to solve business
 3.  **Counted transactions:** Counted the `total_transactions` for each customer using `COUNT(s.id)`.
 4.  **Calculated CLV:** Calculated the `estimated_clv` using the provided formula: `(COUNT(s.id) / TIMESTAMPDIFF(MONTH, u.date_joined, CURDATE())) * 12 * (0.001 * AVG(s.confirmed_amount))`.
     * `COUNT(s.id) / TIMESTAMPDIFF(MONTH, u.date_joined, CURDATE())` represents the average number of transactions per month.
-    * Multiplying by `12` annualizes the transactions.
+    * Multiplying by `12` shows the transactions annually.
     * `0.001` represents the 0.1% profit per transaction.
-    * `AVG(s.confirmed_amount)` calculates the average transaction value (in kobo).
+    * `AVG(s.confirmed_amount)` calculates the average transaction value (in Kobo).
 5.  **Rounded CLV:** Rounded the `estimated_clv` to two decimal places using `ROUND()` to match the expected output format.
 6.  **Grouped by customer:** Grouped the results by `u.id`, `u.first_name`, `u.last_name`, and `u.date_joined` to calculate the CLV for each individual customer.
 7.  **Ordered by CLV:** Ordered the results by `estimated_clv` in descending order to display the customers with the highest CLV first.
@@ -85,7 +85,7 @@ This assessment clearly shows the ability to write SQL queries to solve business
 
 * The primary challenge was to accurately show the relationships between tables and the specific data manipulations required.
 * For Question 1, ensuring the accurate counting of distinct savings and investment plans using `COUNT(DISTINCT CASE WHEN ...)` was crucial to avoid potential overcounting.
-* For Question 2, the correct use of CTEs to break down the query into logical steps was essential for readability.
+* For Question 2, the correct use of CTEs to break down the query into logical steps was essential for better readability.
 * For Question 3, formatting the `last_transaction_date` using the `DATE()` function to match the expected output format (without the timestamp) was a specific requirement.
 * For Question 4, accurately applying the CLV formula and correctly interpreting the units of the `confirmed_amount` (kobo) were important.
 
