@@ -12,7 +12,7 @@ It shows my ability to write SQL queries to solve business problems using the pr
 
 **Tables:** `users_customuser`, `savings_savingsaccount`, and `plans_plan`
 
-**Approach:**
+**My Approach:**
 
 1.  **Joined tables:** Joined `users_customuser` with `savings_savingsaccount` on `u.id = s.owner_id` (`owner_id` is a foreign key to `users_customuser.id`). Joined `savings_savingsaccount` with `plans_plan` on `s.plan_id = p.id` (as `plan_id` is a foreign key to `plans_plan.id`) to combine customer information with their account and plan details. This allowed me to access data from all three tables in a single query.
 2.  **Filtered funded transactions:** Filtered for transactions using where `s.confirmed_amount > 0` (`confirmed_amount` represents the value of inflow) to include only deposits.
@@ -28,7 +28,7 @@ It shows my ability to write SQL queries to solve business problems using the pr
 
 **Tables:** `users_customuser` and `savings_savingsaccount`
 
-**Approach:**
+**My Approach:**
 
 1.  **Created MonthlyTransactions CTE:** Created a Common Table Expression (CTE) named `MonthlyTransactions` to determine the number of transactions per customer for each month. This was achieved by grouping `savings_savingsaccount` (s) by `s.owner_id` and `DATE_FORMAT(s.transaction_date, '%Y-%m')` and using `COUNT(*)` to get the total `monthly_transactions` for each customer-month combination.
 2.  **Created AvgTransactions CTE:** Created another CTE named `AvgTransactions` to calculate the average number of monthly transactions per customer. This CTE used the results from `MonthlyTransactions`, grouped by `owner_id`, and calculated the average of `monthly_transactions` using `AVG()`.
@@ -43,7 +43,7 @@ It shows my ability to write SQL queries to solve business problems using the pr
 
 **Tables:** `plans_plan` and `savings_savingsaccount`
 
-**Approach:**
+**My Approach:**
 
 1.  **Joined tables:** Joined `plans_plan` (p) and `savings_savingsaccount` (s) on `p.id = s.plan_id` to link plans to their transaction history.
 2.  **Filtered active accounts:** Filtered for active savings plans (`p.is_regular_savings = 1`) or active investment plans (`p.is_a_fund = 1`) using a `WHERE` clause with an `OR` condition.
@@ -59,7 +59,7 @@ It shows my ability to write SQL queries to solve business problems using the pr
 
 **Tables:** `users_customuser` and `savings_savingsaccount`
 
-**Approach:**
+**My Approach:**
 
 1.  **Joined tables:** Joined `users_customuser` (u) and `savings_savingsaccount` (s) on `u.id = s.owner_id` to link customer information with their transaction data.
 2.  **Calculated tenure:** Calculated `tenure_months` using `TIMESTAMPDIFF(MONTH, u.date_joined, CURDATE())` to find the difference in months between the customer's `date_joined` and the current date.
