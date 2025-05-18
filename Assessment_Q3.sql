@@ -1,7 +1,4 @@
 # Assessment_Q3.sql
-# Objective: Find all active accounts (savings or investments) with no inflow transactions in the last one year.
-# Tables used: "plans_plan" and "savings_savingsaccount".
-# Where needed, 'u', 's' and 'p' were used as aliases for users_customuser, savings_savingsaccount and plans_plan tables respectively for easy querying.
 
 SELECT
     p.id AS plan_id,
@@ -12,8 +9,9 @@ SELECT
         WHEN p.is_a_fund = 1 THEN 'Investment'
         ELSE 'Unknown'
     END AS type,
-		DATE(MAX(s.transaction_date)) AS last_transaction_date, 		# To find the most recent transaction date.
-    DATEDIFF(CURDATE(), MAX(s.transaction_date)) AS inactivity_days 		# Calculate the days since the last transaction.
+		DATE(MAX(s.transaction_date)) AS last_transaction_date, 
+# Calculate the days since the last transaction.
+    DATEDIFF(CURDATE(), MAX(s.transaction_date)) AS inactivity_days 		
 FROM
     plans_plan p
 JOIN
