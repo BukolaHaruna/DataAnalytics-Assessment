@@ -4,8 +4,6 @@ This repository contains the SQL solutions for the Cowrywise Data Analyst Assess
 ## Overview
 This assessment clearly shows the ability to write SQL queries to solve business problems using the provided database. The solutions demonstrate proficiency in data retrieval, aggregation, joins, and data manipulation across the `users_customuser`, `savings_savingsaccount`, `plans_plan`, and `withdrawals_withdrawal` tables.
 
-**Note:** The SQL files are named according to the format `Assessment_Q[QuestionNumber].sql` as suggested by the expected output file names.
-
 ## Per-Question Explanations
 
 ### Question 1: High-Value Customers with Multiple Products
@@ -91,16 +89,5 @@ This assessment clearly shows the ability to write SQL queries to solve business
 * For Question 3, formatting the `last_transaction_date` using the `DATE()` function to match the expected output format (without the timestamp) was a specific requirement.
 * For Question 4, accurately applying the CLV formula and correctly interpreting the units of the `confirmed_amount` (kobo) were important.
 
-## Submission Instructions
 
-Please ensure the following structure and naming conventions are used for your submission:
-
-1.  Create a new **public** repository named `DataAnalytics-Assessment` on your preferred Git hosting platform (e.g., GitHub, GitLab).
-2.  Commit the four SQL files containing your solutions to the respective questions, named as follows:
-    * `Assessment_Q1.sql`
-    * `Assessment_Q2.sql`
-    * `Assessment_Q3.sql`
-    * `Assessment_Q4.sql`
-3.  Commit this `README.md` file to the root of your repository.
-4.  Ensure all files are in the root directory of the `DataAnalytics-Assessment` repository.
-5.  Once all files are committed, submit the URL of your **public** repository as your assessment submission.
+**Note:** The SQL files are named according to the format `Assessment_Q[QuestionNumber].sql` as suggested by the expected output file names.
