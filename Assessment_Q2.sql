@@ -4,7 +4,8 @@
 WITH MonthlyTransactions AS (
     SELECT
         s.owner_id,
-        DATE_FORMAT(s.transaction_date, '%Y-%m') AS transaction_month, # To specifically extract the year and month from transaction date.
+# To extract the year and month from transaction date.
+        DATE_FORMAT(s.transaction_date, '%Y-%m') AS transaction_month, 
         COUNT(*) AS monthly_transactions
     FROM
         savings_savingsaccount AS s
