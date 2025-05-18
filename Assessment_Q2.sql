@@ -32,7 +32,7 @@ SELECT
     END AS frequency_category,
     COUNT(*) AS customer_count,
     
-# Using the ROUND function to round the avg_transactions_per_category to 1 decimal place to match the expected output.
+# Using the round function to round the avg_transactions_per_category to 1 decimal place to match the expected output.
     ROUND(AVG(at.avg_transactions_per_month), 1) AS avg_transactions_per_category
 FROM
     AvgTransactions AS at
