@@ -1,8 +1,5 @@
 # Assessment_Q2.sql
-# Objective: Calculate the average number of transactions per customer per month and categorize them into high, medium and low frequency.
-# Tables used: "users_customuser" and "savings_savingsaccount".
-# Where needed, 'u', 's' and 'p' were used as aliases for users_customuser, savings_savingsaccount and plans_plan tables respectively for easy querying.
-
+    
 # CTE (Common Table Expression) to calculate the number of transactions per customer for each month.
 WITH MonthlyTransactions AS (
     SELECT
