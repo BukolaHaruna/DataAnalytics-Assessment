@@ -18,7 +18,7 @@ This assessment clearly shows the ability to write SQL queries to solve business
 
 **Approach:**
 
-1.  **Joined tables:** Joined `users_customuser` (u) with `savings_savingsaccount` (s) on `u.id = s.owner_id` and `s` with `plans_plan` (p) on `s.plan_id = p.id` to combine customer information with their account and plan details. This allows us to access data from all three tables in a single query.
+1.  **Joined tables:** Joined `users_customuser` (aliased as `u`) with `savings_savingsaccount` (aliased as `s`) on `u.id = s.owner_id` (as `owner_id` is a foreign key to `users_customuser.id`). Joined `savings_savingsaccount` with `plans_plan` (aliased as `p`) on `s.plan_id = p.id` (as `plan_id` is a foreign key to `plans_plan.id`) to combine customer information with their account and plan details. This allows us to access data from all three tables in a single query.
 2.  **Filtered funded transactions:** Filtered for transactions where `s.confirmed_amount > 0` to include only deposits (inflows).
 3.  **Counted distinct plan types:** Used `COUNT(DISTINCT CASE WHEN p.is_regular_savings = 1 THEN p.id ELSE NULL END)` to count distinct savings plans and `COUNT(DISTINCT CASE WHEN p.is_a_fund = 1 THEN p.id ELSE NULL END)` to count distinct investment plans. `COUNT(DISTINCT)` ensures each plan is counted only once, even if a customer has multiple transactions within the same plan. The `CASE WHEN` statements conditionally count plans based on their type.
 4.  **Grouped by customer:** Grouped the results by `u.id` and `u.name` to aggregate data and calculate totals for each customer.
