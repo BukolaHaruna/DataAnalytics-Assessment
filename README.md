@@ -12,7 +12,7 @@ This assessment clearly shows the ability to write SQL queries to solve business
 
 **SQL File:** `Assessment_Q1.sql`
 
-**Tables Used:** `users_customuser`, `savings_savingsaccount`, `plans_plan`
+**Tables Used:** `users_customuser`, `savings_savingsaccount`, and `plans_plan`
 
 **Approach:**
 
@@ -30,7 +30,7 @@ This assessment clearly shows the ability to write SQL queries to solve business
 
 **SQL File:** `Assessment_Q2.sql`
 
-**Tables Used:** `users_customuser`, `savings_savingsaccount`
+**Tables Used:** `users_customuser` and `savings_savingsaccount`
 
 **Approach:**
 
@@ -47,7 +47,7 @@ This assessment clearly shows the ability to write SQL queries to solve business
 
 **SQL File:** `Assessment_Q3.sql`
 
-**Tables Used:** `plans_plan`, `savings_savingsaccount`
+**Tables Used:** `plans_plan` and `savings_savingsaccount`
 
 **Approach:**
 
@@ -65,7 +65,7 @@ This assessment clearly shows the ability to write SQL queries to solve business
 
 **SQL File:** `Assessment_Q4.sql`
 
-**Tables Used:** `users_customuser`, `savings_savingsaccount`
+**Tables Used:** `users_customuser` and `savings_savingsaccount`
 
 **Approach:**
 
