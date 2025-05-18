@@ -14,8 +14,9 @@ SELECT
     DATEDIFF(CURDATE(), MAX(s.transaction_date)) AS inactivity_days 		
 FROM
     plans_plan p
+# Join the tables.
 JOIN
-    savings_savingsaccount s ON p.id = s.plan_id	# Use JOIN to join savings_savingsaccount table  on plan_id.
+    savings_savingsaccount s ON p.id = s.plan_id
 WHERE
     p.is_regular_savings = 1 OR p.is_a_fund = 1
 GROUP BY
