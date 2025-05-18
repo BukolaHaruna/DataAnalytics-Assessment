@@ -4,7 +4,7 @@ This repository contains the SQL solutions for the Cowrywise Data Analyst Assess
 ## Overview
 This assessment clearly shows the ability to write SQL queries to solve business problems using the provided database. The solutions demonstrate proficiency in data retrieval, aggregation, joins, and data manipulation across the `users_customuser`, `savings_savingsaccount`, `plans_plan`, and `withdrawals_withdrawal` tables.
 
-**Note:** The SQL files are named according to the format `Assessment_Q[QuestionNumber].sql` as implicitly suggested by the expected output file names.
+**Note:** The SQL files are named according to the format `Assessment_Q[QuestionNumber].sql` as suggested by the expected output file names.
 
 ## Per-Question Explanations
 
