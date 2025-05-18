@@ -8,9 +8,7 @@ It shows my ability to write SQL queries to solve business problems using the pr
 
 ### Question 1: High-Value Customers with Multiple Products
 
-**Objective:** Identify customers with at least one funded savings plan and one funded investment plan, and sort by total deposits.
-
-**Tables:** `users_customuser`, `savings_savingsaccount`, and `plans_plan`
+**The goal:** Identify customers with at least one funded savings plan and one funded investment plan, and sort by total deposits.
 
 **My Approach:**
 
@@ -24,9 +22,7 @@ It shows my ability to write SQL queries to solve business problems using the pr
 
 ### Question 2: Transaction Frequency Analysis
 
-**Objective:** Calculate the average number of transactions per customer per month and categorise them into "High Frequency" (≥10 transactions/month), "Medium Frequency" (3-9 transactions/month), and "Low Frequency" (≤2 transactions/month).
-
-**Tables:** `users_customuser` and `savings_savingsaccount`
+**The goal:** Calculate the average number of transactions per customer per month and categorise them into "High Frequency" (≥10 transactions/month), "Medium Frequency" (3-9 transactions/month), and "Low Frequency" (≤2 transactions/month).
 
 **My Approach:**
 
@@ -39,9 +35,7 @@ It shows my ability to write SQL queries to solve business problems using the pr
 
 ### Question 3: Account Inactivity Alert
 
-**Objective:** Find all active accounts (savings or investments) with no transactions in the last one year (365 days).
-
-**Tables:** `plans_plan` and `savings_savingsaccount`
+**The goal:** Find all active accounts (savings or investments) with no transactions in the last one year (365 days).
 
 **My Approach:**
 
@@ -55,9 +49,7 @@ It shows my ability to write SQL queries to solve business problems using the pr
 
 ### Question 4: Customer Lifetime Value (CLV) Estimation
 
-**Objective:** For each customer, calculate account tenure (months since signup), total transactions, and estimated CLV (assuming profit per transaction is 0.1% of the transaction value). Ordered by estimated CLV from highest to lowest.
-
-**Tables:** `users_customuser` and `savings_savingsaccount`
+**The goal:** For each customer, calculate account tenure (months since signup), total transactions, and estimated CLV (assuming profit per transaction is 0.1% of the transaction value). Ordered by estimated CLV from highest to lowest.
 
 **My Approach:**
 
@@ -73,7 +65,7 @@ It shows my ability to write SQL queries to solve business problems using the pr
 6.  **Grouped by customer:** Grouped the results by `u.id`, `u.first_name`, `u.last_name`, and `u.date_joined` to calculate the CLV for each individual customer.
 7.  **Ordered by CLV:** Ordered the results by `estimated_clv` in descending order to display the customers with the highest CLV first.
 
-## Challenges
+## Challenges I faced:
 
 * My major challenge was to accurately show the relationships between tables and the specific data manipulations required.
 * For Question 1 - Ensuring the accurate counting of distinct savings and investment plans using `COUNT(DISTINCT CASE WHEN ...)` was important to avoid potential overcounting.
