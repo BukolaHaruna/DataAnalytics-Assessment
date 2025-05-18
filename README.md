@@ -83,7 +83,7 @@ This assessment clearly shows the ability to write SQL queries to solve business
 
 ## Challenges
 
-* The primary challenge was to accurately translate the problem statements into correct and efficient SQL queries, paying close attention to the relationships between tables and the specific data manipulations required.
+* The primary challenge was to accurately show the relationships between tables and the specific data manipulations required.
 * For Question 1, ensuring the accurate counting of distinct savings and investment plans using `COUNT(DISTINCT CASE WHEN ...)` was crucial to avoid potential overcounting.
 * For Question 2, the correct use of CTEs to break down the query into logical steps was essential for readability and maintainability.
 * For Question 3, formatting the `last_transaction_date` using the `DATE()` function to match the expected output format (without the timestamp) was a specific requirement.
